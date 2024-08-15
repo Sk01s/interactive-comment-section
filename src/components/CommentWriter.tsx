@@ -15,9 +15,9 @@ const CommentWriter = ({
   setShowen = (state) => null,
 }: {
   id: number;
-  username: string;
+  username?: string;
   action: actionType;
-  setShowen: (state: boolean) => void;
+  setShowen?: (state: boolean) => void;
 }) => {
   const user = useAppSelector(selectUser);
   const [comment, setComment] = useState("");

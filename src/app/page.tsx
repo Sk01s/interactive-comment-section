@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import data from "./data.json";
 import { loadComments, selectComments } from "@/lib/features/commentSlice";
 import CommentElement from "@/components/CommentElement";
-import CommentWriter from "@/components/CommentWriter";
+import CommentWriter, { actionType } from "@/components/CommentWriter";
 
 export default function Home() {
   const comments = useAppSelector(selectComments);
@@ -29,7 +29,7 @@ export default function Home() {
             user={user}
           />
         ))}
-        <CommentWriter id={0} />
+        <CommentWriter id={0} action={actionType.add} />
       </div>
     </main>
   );
